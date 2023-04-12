@@ -17,10 +17,10 @@ def login(user)
             tentative -= 1
         else
             puts "C'est foutu mec !"
-            break
+            return false
         end
     end
-    return tentative > 0
+    return true
 end
 
 
@@ -30,8 +30,7 @@ end
 
 def perform
     user = signup
-    connected = login(user)
-    if connected
+    if login(user)
         welcome_screen
     end
 end
