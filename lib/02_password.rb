@@ -17,18 +17,23 @@ def login(user)
             tentative -= 1
         else
             puts "C'est foutu mec !"
+            break
         end
     end
+    return tentative > 0
 end
 
-def welcome_screen
 
+def welcome_screen
     puts "********** Tu est bien dans ton petit jardin secret ! *******"
 end
 
 def perform
     user = signup
-    login(user)
+    connected = login(user)
+    if connected
+        welcome_screen
+    end
 end
 
 perform
