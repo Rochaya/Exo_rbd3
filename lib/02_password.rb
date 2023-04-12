@@ -29,9 +29,6 @@ end
 def perform
     user = signup
     login(user)
-    if login(signup)
-        welcome_screen
-    end
 end
 
 perform
